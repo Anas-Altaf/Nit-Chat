@@ -38,8 +38,12 @@ app.get("/", (req, res) => {
   // Serve the index.html file from the current directory
   res.sendFile("index.html", { root: currentDirPath });
 });
+app.get("/users", (req, res) => {
+  res.json({ length: Object.keys(users).length });
+});
 
 const PORT = process.env.PORT || 3000;
 server.listen(PORT, () => {
   console.log(`Server is running on http://localhost:${PORT}`);
 });
+module.exports = Object.keys(users).length;

@@ -1,11 +1,20 @@
 const socket = io("https://dkfkgl-3000.csb.app");
-
 const form = document.getElementById("send-message-form");
 const messageInput = document.getElementById("messageinp");
 const messageContainer = document.querySelector(".container");
 const timeline = document.getElementById("timeline");
-const wifi_icon = '<i class="fas fa-wifi"></i>';
-
+let wifi_icon = '<i class="fa-solid fa-wifi"></i>';
+let audio = new Audio("./static/audio/sms.mp3");
+let online_users = "";
+setInterval(() => {
+  fetch("/users")
+    .then((response) => response.json())
+    .then((data) => {
+      online_users = `| <i class="fa fa-user" aria-hidden="true"></i> Online: <strong style="color:red">${data.length}</strong>`;
+      //   console.log("Length of the object:", data.length);
+    });
+  // .catch((error) => console.error("Error fetching object length:", error));
+}, 1000);
 //Username checker
 let userNameChecker = (userName) => {
   if (userName == null || userName == undefined || userName == "") {
@@ -56,6 +65,9 @@ function CurrentTime() {
   if (min < 10) {
     min = "0" + min;
   }
+  if (hr < 10) {
+    hr = "0" + hr;
+  }
   var ampm = "AM";
   if (hr > 12) {
     hr -= 12;
@@ -83,7 +95,9 @@ function CurrentTime() {
     " " +
     date +
     " " +
-    year;
+    year +
+    " " +
+    online_users;
 }
 setInterval(CurrentTime, 1000);
 setInterval(() => {}, 1000);
@@ -127,6 +141,10 @@ function appendMessage(message, position, color) {
   messageElement.classList.add("message");
   messageElement.classList.add(position);
   messageContainer.appendChild(messageElement);
+  if (position == "left") {
+    audio.play();
+    // console.log("playing");
+  }
 }
 
 form.addEventListener("submit", (event) => {
