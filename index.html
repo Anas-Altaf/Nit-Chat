@@ -1,11 +1,13 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="./static/css/style.css">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="./static/css/style.css">
+        <script defer src="https://dkfkgl-3000.csb.app/socket.io/socket.io.js"></script>
+        <script defer src="static/js/client.js"></script>
+        <script src="https://kit.fontawesome.com/1711c5a99a.js" crossorigin="anonymous"></script>
     <link rel="icon" type="image/x-icon" href="./static/images/favicon.png">
-    <script src="https://kit.fontawesome.com/1711c5a99a.js" crossorigin="anonymous"></script>
     <title>Nit Chat - Chat Anonymously</title>
 </head>
 <body>
@@ -17,14 +19,12 @@
         </div>
     </nav>
     <h1 id="sec-heading">Keep Chatting na!</h1>
+    <div id="timeline"><i class="fas fa-wifi"></i>Current Time : 11:50 AM, 2 Feb, 2024</div>
     <div class="container" id="containerid">
-        <div id="timeline"><i class="fas fa-wifi"></i>Current Time : 11:50 AM, 2 Feb, 2024</div>
     </div>
-    <form action="#" method="post" id="send-message-form">
+    <form action="#"  id="send-message-form">
         <input type="text" name="messageinp" id="messageinp" placeholder="Write Your Message Here...">
         <button class="btn"><i class="fa fa-paper-plane" aria-hidden="true"></i></button>
     </form>
 </body>
-<script defer src="/socket.io/socket.io.js"></script>
-<script defer src="./static/js/client.js"></script>
 </html>
