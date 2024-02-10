@@ -88,7 +88,13 @@ function CurrentTime() {
 setInterval(CurrentTime, 1000);
 setInterval(() => {}, 1000);
 // Name Input
-let Name = prompt("Enter Your Name to Join:");
+let Name = "";
+do {
+  Name = prompt("Kindly Enter Your Name to Join:");
+  if (Name == null || Name == undefined || Name == "") {
+    Name = "Newbie";
+  }
+} while (Name == null || Name == undefined || Name == "");
 Name = userNameChecker(Name);
 // setInterval(function () {
 //   var element = document.getElementById("containerid");

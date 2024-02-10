@@ -159,7 +159,6 @@ body {
   background: var(--primary-color);
   background: var(--primary-msg-box-bgcolor);
 }
-
 form {
   display: flex;
   align-items: center;
