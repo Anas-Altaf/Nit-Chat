@@ -1,0 +1,17 @@
+{
+  "name": "nit_chat_app_sever",
+  "version": "1.0.0",
+  "description": "A Nice online Temporary Chat Web App",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Anas Altaf",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.18.2",
+    "nodemon": "^3.0.3",
+    "pm2": "^5.3.1",
+    "socket.io": "^4.7.4"
+  }
+}

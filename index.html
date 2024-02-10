@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./static/css/style.css">
+    <link rel="icon" type="image/x-icon" href="./static/images/favicon.png">
+    <script src="https://kit.fontawesome.com/1711c5a99a.js" crossorigin="anonymous"></script>
+    <title>Nit Chat - Chat Anonymously</title>
+</head>
+<body>
+    <nav id="navbar">
+        <img class="logo" src="./static/images/logo.png" alt="">
+        <div class="logoname">
+            <h1>Nit Chat</h1>
+            <h6>Developed By <strong>Anas Altaf </strong>with<i class="fa fa-heart"></i></h6>
+        </div>
+    </nav>
+    <h1 id="sec-heading">Keep Chatting na!</h1>
+    <div class="container" id="containerid">
+        <div id="timeline"><i class="fas fa-wifi"></i>Current Time : 11:50 AM, 2 Feb, 2024</div>
+    </div>
+    <form action="#" method="post" id="send-message-form">
+        <input type="text" name="messageinp" id="messageinp" placeholder="Write Your Message Here...">
+        <button class="btn"><i class="fa fa-paper-plane" aria-hidden="true"></i></button>
+    </form>
+</body>
+<script defer src="/socket.io/socket.io.js"></script>
+<script defer src="./static/js/client.js"></script>
+</html>
